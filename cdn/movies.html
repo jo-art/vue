@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  <div id="app">
+    <input v-model="targetDt" @keyup.enter="getMovie"><button @click="getMovie">조회</button>
+    <table>
+      <thead>
+        <th>
+          <td>순위</th>
+          <td>영화이름</th>
+          <td>오픈</th>  
+        </th>
+      </thead>
+      <tbody>
+      <tr v-for="todo in todos">
+        <td>{{todo.rank}}</td>
+        <td>{{todo.movieNm}}</td>
+        <td>{{todo.openDt}}</td>
+        <td>{{todo.}}</td>  
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+          data(){
+            return{
+              targetDt:'20250423',  
+              todos :[ ]
+            }
+          
+          },
+          methods:{ 
+           
+            getMovie(){
+                fetch('http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=12664b24453335d2c3eca0fdc4b3b013&targetDt='+this.targetDt)
+                  .then(response => response.json())
+                  .then(response => this.todos=response.boxOfficeResult.dailyBoxOfficeList)
+          }},
+          mounted(){
+            getMovie();
+      
+                }
+          
+        }).mount("#app");
+  </script>
+</body>
+</html>
