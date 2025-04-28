@@ -33,6 +33,7 @@ export default{
   
 </script>
 <template>
+  <div>
       사번:<input v-model="emp.employee_id"><br>
       fname:<input v-model="emp.first_name"><br>
       lname:<input v-model="emp.last_name"><br>
@@ -42,6 +43,7 @@ export default{
         <option v-for= "item in depts" :value="item.dno">{{item.dname}}</option>
       </select><br>
       <button @click="empBtn">수정</button>
+    </div>  
 </template>
 <style>
 </style>

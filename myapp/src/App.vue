@@ -3,11 +3,11 @@ import GoodsView from './components/goods.vue';
 import MemberForm from './views/MemberForm.vue';
 import MovieForm  from './views/Movie.vue';
 import ToDoForm  from './views/ToDoForm.vue';
-import EmpForm  from './views/EmpForm.vue';
+import EmpView from './views/EmpView.vue';
 import ParamView from './views/ParamView.vue';
 import { RouterLink,RouterView } from 'vue-router';
 export default{
-  components:{GoodsView,MemberForm,MovieForm,ToDoForm,EmpForm,ParamView}, //컴포넌트 선언
+  components:{GoodsView,MemberForm,MovieForm,ToDoForm,EmpView,ParamView}, //컴포넌트 선언
 
   data(){
    
@@ -44,7 +44,7 @@ export default{
             <RouterLink to="/Movie" class="nav-link " aria-current="page" href="#">영화</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/EmpForm" class="nav-link " aria-current="page" href="#">emp</RouterLink>
+            <RouterLink to="/EmpView" class="nav-link " aria-current="page" href="#">emp</RouterLink>
           </li>
           <li class="nav-item">
             <RouterLink to="/ParamView/kim" class="nav-link " aria-current="page" href="#">ParamView1</RouterLink>
