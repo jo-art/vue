@@ -5,6 +5,7 @@
   </div>
 </template>
 <script>
+
 import EmpList from '../components/EmpList.vue';
 import EmpForm from '../components/EmpForm.vue';
 export default{

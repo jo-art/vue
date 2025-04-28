@@ -48,8 +48,8 @@
     },
     {
       "id": "9",
-      "first_name": "Odilia",
-      "last_name": "Paye",
+      "first_name": "Odilia(수정)",
+      "last_name": "Paye(수정)",
       "email": "opaye8@rakuten.co.jp",
       "salary": "$6.65",
       "department_id": 20,
@@ -89,6 +89,15 @@
       "commission_pct": "",
       "manager_id": "",
       "department_id": 10
+    },
+    {
+      "id": "21",
+      "first_name": "Michal",
+      "last_name": "Ivanyushkin",
+      "email": "mivanyushkin5@hao123.com",
+      "salary": "$8.21",
+      "department_id": 10,
+      "job_id": "it"
     }
   ]
 }

@@ -16,6 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/nested">(컴포넌트 안 다른 컴포넌스 사용)nested</RouterLink>
         <RouterLink to="/parent">(자식컴포넌트에서 부모컴포넌트)parent</RouterLink>
         <RouterLink to="/emp">사원관리</RouterLink>
+        <RouterLink to="/todo">할일추가</RouterLink>
       </nav>
     </div>
   </header>

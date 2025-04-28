@@ -52,6 +52,7 @@
 </div>
 </template>
 <script>
+let id=20;
 import axios from 'axios';
 axios.defaults.baseURL="http://localhost:3000/emp";
 export default{
@@ -79,10 +80,10 @@ methods:{
       },
       empUpdate(){
         if(this.emp.id){
-          axios.push(`/$this.emp.id`,this.emp)
+          axios.put(`/${this.emp.id}`,this.emp)
           .then(()=>this.$emit("saved"));
         }else{
-          this.emp.id=++id;
+          this.emp.id = String(++id);
           axios.post("",this.emp)
           .then(()=>this.$emit("saved"));
         }
