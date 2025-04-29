@@ -34,6 +34,11 @@ const router = createRouter({
       path: '/todo',
       name: 'todo',
       component: () => import('../views/ToDoView.vue'),
+    },
+    {
+      path: '/slot',
+      name: 'slot',
+      component: () => import('../views/SlotView.vue'),
     }
 
   ],

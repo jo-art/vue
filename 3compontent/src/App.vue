@@ -17,6 +17,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/parent">(자식컴포넌트에서 부모컴포넌트)parent</RouterLink>
         <RouterLink to="/emp">사원관리</RouterLink>
         <RouterLink to="/todo">할일추가</RouterLink>
+        <RouterLink to="/slot">slot컴포넌트</RouterLink>
       </nav>
     </div>
   </header>
