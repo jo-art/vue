@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:3000/todo";
+axios.defaults.baseURL = "/api/todo";
 import ToDoList from '../components/ToDoList.vue';
 export default {
   components:{ToDoList},

@@ -51,37 +51,42 @@
     </div>
     <!-- 댓글 -->
     <div class="row">
-      <CommentComp :bid="boardInfo.id"/>
+       <CommentComp :bid="searchNo"/>
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import axios from 'axios';
+import {ref} from 'vue';
 import CommentComp from '@/components/CommentComp.vue';
-export default{
-  components:{CommentComp},
-  data(){
-    return{
-      searchNo: "",
-      boardInfo: {}
+import { useRouter, useRoute} from 'vue-router';
+
+const router = useRouter();
+const route = useRoute();
+
+const searchNo=  route.params.id;
+const boardInfo = ref({});
+
+
+
+
+  const boardInfoList  = async  (id)=>{
+  const response = await axios.get(`/api/board/2`);
+  boardInfo.value = response.data[0];  // [0]이 맞는 구조인지 확인 필요
+};
+
+    function goToUpdateForm(id){
+      router.push({path:'/boardForm', query : { id: id}});
     };
-  },
-  created(){
-    this.searchNo = this.$route.query.id;
-    this.boardInfoList();
-  },
-  methods:{
-   async boardInfoList(id){
-      let board= await axios.get(`/api/board/${this.searchNo}`);
-      this.boardInfo = board.data[0];
-    },
-    goToUpdateForm(id){
-      this.$router.push({path:'/boardForm', query : { id: id}});
-    },goToListForm(){
-       this.$router.push({path:'/boardList'});
-    },goTodeleteForm(id){
-      this.$router.push({path:'/boardForm', query : { id: id}});
+   
+    function goToListForm(){
+      router.push({path:'/boardList'});
+    };
+ 
+    function goTodeleteForm(id){
+      router.push({path:'/boardForm', query : { id: id}});
     }
-  }
-}
+   
+   
+  boardInfoList();
 </script>

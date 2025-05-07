@@ -1,18 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
   <header>
 
+
     <div class="wrapper">
+   
+
       <nav>
-        <RouterLink to="/">home</RouterLink>
-        <RouterLink to="/about">about</RouterLink>
-        <RouterLink to="/boardlist">boardlist</RouterLink>
-        <RouterLink to="/login">login</RouterLink>
-        <RouterLink to="/boardTable">boardTable</RouterLink>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/boardList">게시판</RouterLink>
       </nav>
     </div>
   </header>

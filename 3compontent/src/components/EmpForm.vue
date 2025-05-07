@@ -54,7 +54,7 @@
 <script>
 let id=20;
 import axios from 'axios';
-axios.defaults.baseURL="http://localhost:3000/emp";
+axios.defaults.baseURL="/api/emp";
 export default{
   props:{selEmp:{type:Object}}
   ,
@@ -75,7 +75,7 @@ watch:{
 },
 methods:{
   fetchDeptList(){
-        axios.get("http://localhost:3000/dept")
+        axios.get("/api/dept")
               .then(response => this.depts=response.data)
       },
       empUpdate(){

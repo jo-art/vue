@@ -16,28 +16,17 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
-    },{
-      path: '/boardlist',
-      name: 'boardlist',
+    }, {
+      path: '/boardList',
+      name: 'boardList',
+      component: HomeView,
       component: () => import('../views/BoardList.vue'),
-    },{
-      path: '/boardform',
-      name: 'boardform',
-      component: () => import('../views/BoardForm.vue'),
-    },{
-      path: '/boardInfo',
+    }, {
+      path: '/boardInfo/:id',
       name: 'boardInfo',
+      component: HomeView,
       component: () => import('../views/BoardInfo.vue'),
-    },{
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/LoginView.vue'),
-    },{
-      path: '/boardTable',
-      name: 'boardTable',
-      component: () => import('../views/boardTable.vue'),
     }
-
   ],
 })
 

@@ -4,7 +4,7 @@ const mysql = require("mysql2");
 const customer = require("./customerSql");
 const board= require("./boardSql");
 const comment= require("./CommentSql");
-const sqllist ={customer:customer,board:board,comment:comment };
+const sqllist ={customer:customer,board:board,comment:comment};
 
 
 // mysql 접속 정보

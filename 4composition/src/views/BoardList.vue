@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    
     <table class="table table-hover">
       <thead>
         <tr>
@@ -22,28 +23,26 @@
     </table>
   </div>
 </template>
-<script>
+<script setup>
 import axios from 'axios';
+import {ref} from 'vue';
+import { useRouter, useRoute} from 'vue-router';
 
-export default{
-  data(){
-    return{
-      boards: []
+const router = useRouter();
+const route = useRoute();
+const boards = ref([]);
+
+  const  boardList = async()=>{
+      let result = await axios.get(`/api/board`);
+      boards.value = result.data;
     };
-  },
-  methods:{
-    boardList(){
-      axios.get("/api/board")
-      .then(response=> this.boards = response.data)
-    },
-    goToDetail(id){
-        // query : ?id=1  param boardInfo/1
-        this.$router.push({path:'/boardInfo', query : { id: id}})
-    }
-  }, mounted(){
-    this.boardList();
-  }
-}
+    boardList();
+  
+//  const goToDetail =()=>{};
+function goToDetail(id){
+  router.push(`/boardInfo/${id}`);
+ 
+} 
 </script>
 <style scoped>
 table * {
